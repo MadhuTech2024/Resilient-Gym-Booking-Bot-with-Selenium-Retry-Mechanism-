@@ -6,10 +6,13 @@ from selenium.webdriver.support import expected_conditions as ec
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
 import os
 import time
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Create Chrome Profile and create account manually. Put YOUR email and password here:
-ACCOUNT_EMAIL = "your_email@test.com"
-ACCOUNT_PASSWORD = "your_password"
+ACCOUNT_EMAIL = os.getenv("ACCOUNT_EMAIL")
+ACCOUNT_PASSWORD =os.getenv("ACCOUNT_PASSWORD")
 GYM_URL = "https://appbrewery.github.io/gym/"
 
 chrome_options = webdriver.ChromeOptions()
